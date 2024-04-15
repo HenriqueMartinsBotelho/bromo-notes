@@ -24,7 +24,7 @@ export const NotePreviewList = forwardRef<HTMLUListElement, ComponentProps<'ul'>
       if (focusableElements[initialFocusIndex] instanceof HTMLElement) {
         ; (focusableElements[initialFocusIndex] as HTMLElement).focus()
       }
-    }, [notes, selectedNoteIndex])
+    }, [notes.length, selectedNoteIndex])
 
     useEffect(() => {
       const handleKeyDown = (event: KeyboardEvent) => {

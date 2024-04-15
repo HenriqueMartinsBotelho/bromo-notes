@@ -1,3 +1,4 @@
+import { app } from 'electron'
 import { appDirectoryName, fileEncoding, welcomeNoteFilename } from '@shared/constants'
 import { NoteInfo } from '@shared/models'
 import { CreateNote, DeleteNote, GetNotes, ReadNote, WriteNote } from '@shared/types'
@@ -8,12 +9,12 @@ import { homedir } from 'os'
 import path from 'path'
 import welcomeNoteFile from '../../../resources/welcomeNote.md?asset'
 
-export const getRootDir = () => {
-  return path.join(__dirname, '../../../resources')
+export const getSaveDir = () => {
+  return path.join(app.getAppPath(), 'resources')
 }
 
 export const getNotes: GetNotes = async () => {
-  const rootDir = getRootDir()
+  const rootDir = getSaveDir()
 
   await ensureDir(rootDir)
 
@@ -39,7 +40,7 @@ export const getNotes: GetNotes = async () => {
 }
 
 export const getNoteInfoFromFilename = async (filename: string): Promise<NoteInfo> => {
-  const fileStats = await stat(`${getRootDir()}/${filename}`)
+  const fileStats = await stat(`${getSaveDir()}/${filename}`)
 
   return {
     title: filename.replace(/\.md$/, ''),
@@ -48,20 +49,20 @@ export const getNoteInfoFromFilename = async (filename: string): Promise<NoteInf
 }
 
 export const readNote: ReadNote = async (filename) => {
-  const rootDir = getRootDir()
+  const rootDir = getSaveDir()
 
   return readFile(`${rootDir}/${filename}.md`, { encoding: fileEncoding })
 }
 
 export const writeNote: WriteNote = async (filename, content) => {
-  const rootDir = getRootDir()
+  const rootDir = getSaveDir()
 
   console.info(`Writing note ${filename}`)
   return writeFile(`${rootDir}/${filename}.md`, content, { encoding: fileEncoding })
 }
 
 export const createNote: CreateNote = async () => {
-  const rootDir = getRootDir()
+  const rootDir = getSaveDir()
 
   await ensureDir(rootDir)
 
@@ -99,7 +100,7 @@ export const createNote: CreateNote = async () => {
 }
 
 export const deleteNote: DeleteNote = async (filename) => {
-  const rootDir = getRootDir()
+  const rootDir = getSaveDir()
 
   const { response } = await dialog.showMessageBox({
     type: 'warning',

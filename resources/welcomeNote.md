@@ -9,11 +9,11 @@ Following there's a quick overview of the currently supported Markdown syntax.
 ## Text formatting
 
 This is a **bold** text.
-This is an _italic_ text.
+This is an *italic* text.
 
 ## Headings
 
-Here are all the heading formats currently supported by **_NoteMark_**:
+Here are all the heading formats currently supported by ***NoteMark***:
 
 # Heading 1
 
@@ -27,9 +27,9 @@ Here are all the heading formats currently supported by **_NoteMark_**:
 
 For example, you can add a list of bullet points:
 
-- Bullet point 1
-- Bullet point 2
-- Bullet point 3
+* Bullet point 1
+* Bullet point 2
+* Bullet point 3
 
 ### Numbered list
 
@@ -47,8 +47,8 @@ Here we have a numbered list:
 
 Only `inline code` is currently supported!
 
-Code block snippets using the following syntax _\`\`\`js\`\`\`_ are **_not supported_** yet!
+Code block snippets using the following syntax *\`\`\`js\`\`\`* are ***not supported*** yet!
 
 ### Links
 
-Links are **_not supported_** yet!
+Links are ***not supported*** yet!
