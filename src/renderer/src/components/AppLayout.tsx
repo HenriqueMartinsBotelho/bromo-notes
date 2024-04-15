@@ -9,7 +9,7 @@ export const RootLayout = ({ children, className, ...props }: ComponentProps<'ma
   )
 }
 
-export const Sidebar = ({ className, children, ...props }: ComponentProps<'aside'>) => {
+export const Sidebar = ({ className, children, ...props }) => {
   return (
     <aside
       className={twMerge('w-[250px] bg-black mt-8 h-[100vh + 2px] overflow-auto', className)}
@@ -19,6 +19,8 @@ export const Sidebar = ({ className, children, ...props }: ComponentProps<'aside
     </aside>
   )
 }
+
+Sidebar.displayName = 'Sidebar'
 
 export const Content = forwardRef<HTMLDivElement, ComponentProps<'div'>>(
   ({ children, className, ...props }, ref) => (

@@ -18,6 +18,7 @@ export const NotePreview = ({
 
   return (
     <div
+      tabIndex={0}
       className={cn(
         'cursor-pointer px-2.5  transition-colors duration-75',
         {

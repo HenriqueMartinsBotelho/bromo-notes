@@ -17,6 +17,7 @@ export const useNotesList = ({ onSelect }: { onSelect?: () => void }) => {
   return {
     notes,
     selectedNoteIndex,
+    setSelectedNoteIndex,
     handleNoteSelect
   }
 }
