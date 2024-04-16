@@ -1,34 +1,44 @@
-# bro-editor
+# BromoNotes
 
-An Electron application with React and TypeScript
+## About the Project
 
-## Recommended IDE Setup
+BromoNotes is a simple and efficient Markdown editor designed to help developers create and manage their own cheat sheets. With support for technologies such as Git, Docker, SQL, JavaScript, Linux, and more, this editor aims to provide quick access to essential shortcuts and commands.
 
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+This project is built using React, Vite, Electron, and Jotai, offering a smooth experience for both desktop usage and development environment.
 
-## Project Setup
+## Features
 
-### Install
+- **Real-Time Editing:** Edit and preview Markdown simultaneously.
+- **Predefined Templates:** Access templates for various technologies like Git, Docker, and more.
+- **Customizable:** Add, remove, and modify cheat sheets as needed.
+- **Cross-Platform:** Available for Windows, Mac, and Linux thanks to Electron.
+
+## Prerequisites
+
+Before starting, make sure you have Node.js installed on your machine. You can download the latest version at: [Node.js Official Site](https://nodejs.org/)
+
+## Installation
+
+Install the dependencies:
 
 ```bash
-$ yarn
+yarn install
 ```
 
-### Development
+## Running
+
+To run the project locally, use:
 
 ```bash
-$ yarn dev
+yarn run dev
 ```
 
-### Build
+This will start the Vite development server and open the Electron app.
+
+## Packaging
+
+To create a compiled version of the app for distribution:
 
 ```bash
-# For windows
-$ yarn build:win
-
-# For macOS
-$ yarn build:mac
-
-# For Linux
-$ yarn build:linux
+npm run build
 ```
